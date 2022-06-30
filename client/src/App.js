@@ -6,7 +6,7 @@ import { getPosts }  from './actions/posts';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import memories from './images/memories.png';
-import Post from './components/Posts/Post/Post';
+
 // import useStyles from './styles'
 
 const App = () => {

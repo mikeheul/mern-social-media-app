@@ -3,10 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts'
 
-// GET THE CURRENT ID POST
-
-
-
 const Form = ({ currentId, setCurrentId }) => {
     // const classes = useStyles();
     const [postData, setPostData] = useState({
