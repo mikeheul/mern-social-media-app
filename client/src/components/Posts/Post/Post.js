@@ -17,7 +17,7 @@ const Post = ({ post }) => {
                 <span className="post-date">{ moment(post.createdAt).fromNow()}</span>
             </div>
             <div className="overlay-2">
-                <button onClick={() => {}}>Text</button>
+                <button onClick={() => {}}>Edit</button>
             </div>
             <div className="details">
                 <span className="post-tags">{ post.tags.map((tag) => `#${tag} `) }</span>

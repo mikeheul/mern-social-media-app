@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPost } from '../../actions/posts'
 
+// GET THE CURRENT ID POST
+
+
+
 const Form = () => {
     // const classes = useStyles();
     const [postData, setPostData] = useState({
