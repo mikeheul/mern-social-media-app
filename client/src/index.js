@@ -9,7 +9,7 @@ import App from './App';
 import "./styles/style.css";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)))
-console.log(store)
+// console.log(store)
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 

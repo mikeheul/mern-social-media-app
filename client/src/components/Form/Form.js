@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import useStyles from './styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts'
+import FileBase from 'react-file-base64';
 
 const Form = ({ currentId, setCurrentId }) => {
     // const classes = useStyles();
@@ -24,22 +25,25 @@ const Form = ({ currentId, setCurrentId }) => {
         } else {
             dispatch(createPost(postData));
         }
+        clear();
     }
     
-    const clear = () => {}
+    const clear = () => {
+        setCurrentId(null);
+        setPostData({creator: '', title: '', message: '', tags: '', selectedFile: ''})
+    }
 
     return (
         <div className="paper">
             <h4>Posts</h4>
-            <form action="" noValidate className="form" onSubmit={handleSubmit}>
-                <h6>Creating a Memory</h6>
+            <form noValidate className="form" onSubmit={handleSubmit}>
+                <h6>{ currentId ? 'Editing' : 'Creating' } a Memory</h6>
                 <input 
                     type="text" 
                     name="creator" 
                     placeholder="Creator..." 
                     value={postData.creator}
                     onChange={(e) => setPostData({ ...postData, creator: e.target.value})}
-                    required
                 />
                 <input 
                     type="text" 
@@ -66,10 +70,21 @@ const Form = ({ currentId, setCurrentId }) => {
                     required
                 />
                 <div className="fileInput">
-                    <input type="file" name="selectedFile" />
+                    <FileBase
+                        multiple={false} 
+                        onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} 
+                    />
                 </div>
-                <input type="submit" className="btn-submit" value="Send" />
-                <input type="button" onClick={clear} className="btn-submit" value="Clear" />
+
+                <input 
+                    type="submit" 
+                    className="btn btn-submit" 
+                    value="Send" />
+                <input 
+                    type="button" 
+                    onClick={clear} 
+                    className="btn btn-clear" 
+                    value="Clear" />
             </form>
         </div>
     );

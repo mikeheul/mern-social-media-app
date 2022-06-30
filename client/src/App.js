@@ -11,12 +11,12 @@ import memories from './images/memories.png';
 
 const App = () => {
 
+    const [currentId, setCurrentId] = useState(null);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getPosts());
-    }, [dispatch])
+    }, [currentId, dispatch])
 
-    const [currentId, setCurrentId] = useState(null);
     // const classes = useStyles();
     // return (
     //     <Container maxwidth="lg">
