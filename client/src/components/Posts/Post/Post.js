@@ -1,10 +1,35 @@
 import React from 'react';
 // import useStyles from './styles';
+import moment from 'moment';
 
-const Post = () => {
+const Post = ({ post }) => {
     // const classes = useStyles();
     return (
-        <h1>Post</h1>
+        <div className="card">
+            <div className="card-title">
+                <h1>{ post.title }</h1>
+            </div>
+            <div className="card-media">
+                <img src="" alt="" />
+            </div>
+            <div className="overlay">
+                <h6>{ post.creator }</h6>
+                <p>{ moment(post.createdAt).fromNow()}</p>
+            </div>
+            <div className="overlay-2">
+                <button onClick={() => {}}>Text</button>
+            </div>
+            <div className="details">
+                <span>{ post.tags.map((tag) => `#${tag} `) }</span>
+            </div>
+            <div className="card-content">
+                <h5>{ post.message }</h5>
+            </div>
+            <div className="card-actions">
+                <button onClick={() => {}}>Like { post.likeCount }</button>
+                <button onClick={() => {}}>Delete</button>
+            </div>
+        </div>
     );
 };
 

@@ -48,10 +48,6 @@ const App = () => {
                         <h4>Posts</h4>
                         <Posts />
                     </div>
-                    <div className="item">
-                        <h5>Post</h5>
-                        <Post />
-                    </div>
                 </div>
                 <Form />
             </div>

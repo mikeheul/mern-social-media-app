@@ -7,13 +7,21 @@ const Posts = () => {
     // const classes = useStyles();
 
     const posts = useSelector((state) => state.posts);
-    console.log(posts);
+
+    posts.map((post, index) => (
+        console.log(post._id)
+    ))
 
     return (
-        <>
-            <h1>POSTS</h1>
-            <Post />
-        </>
+        !posts.length ? "No posts found" : (
+            <div className="posts-container">
+                { posts.map((post) => (
+                    <div className="post-item" key={post._id}>
+                        <Post post={post} />
+                    </div>
+                ))}
+            </div>
+        )
     );
 };
 
