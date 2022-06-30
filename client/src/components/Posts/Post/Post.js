@@ -2,7 +2,7 @@ import React from 'react';
 // import useStyles from './styles';
 import moment from 'moment';
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
     // const classes = useStyles();
     return (
         <div className="card">
@@ -17,7 +17,9 @@ const Post = ({ post }) => {
                 <span className="post-date">{ moment(post.createdAt).fromNow()}</span>
             </div>
             <div className="overlay-2">
-                <button onClick={() => {}}>Edit</button>
+                <button 
+                    onClick={() => setCurrentId(post._id)} >Edit
+                </button>
             </div>
             <div className="details">
                 <span className="post-tags">{ post.tags.map((tag) => `#${tag} `) }</span>

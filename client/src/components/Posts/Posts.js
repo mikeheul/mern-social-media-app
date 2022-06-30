@@ -3,7 +3,7 @@ import Post from './Post/Post'
 // import { useStyles } from './styles';
 import { useSelector } from 'react-redux';
 
-const Posts = () => {
+const Posts = ({ setCurrentId }) => {
     // const classes = useStyles();
 
     const posts = useSelector((state) => state.posts);
@@ -17,7 +17,7 @@ const Posts = () => {
             <div className="posts-container">
                 { posts.map((post) => (
                     <div className="post-item" key={post._id}>
-                        <Post post={post} />
+                        <Post post={post} setCurrentId={setCurrentId} />
                     </div>
                 ))}
             </div>
