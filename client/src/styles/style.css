@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body {
+    background: rgb(81, 118, 134);
+}
+
+.container {
+    padding: 30px;
+}
+
+.grow {
+    display: flex;
+}
+
+.paper {
+    padding: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form input {
+    width: 100%;
+}
+
+.img-logo {
+    height: 150px;
+    object-fit: cover;
+}
+
+.posts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    flex-wrap: wrap;   
+    gap: 20px 
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    /* border: 1px solid #000; */
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.card h1 {
+    font-size: 25px;
+}
+
+.card span {
+    font-size: 11px;
+    color: rgb(128, 128, 128);
+}
+
+.card .card-content h5 {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.card .card-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.card .card-actions button {
+    border: none;
+    background: rgb(67, 67, 67);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+}

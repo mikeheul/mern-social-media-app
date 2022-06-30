@@ -41,7 +41,7 @@ const App = () => {
             <div className="title">
                 <h1>MEMORIES</h1>
             </div>
-            <img src={memories} alt="" />
+            <img src={memories} alt="" className="img-logo" />
             <div className="grow">
                 <div className="container">
                     <div className="item">

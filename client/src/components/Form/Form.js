@@ -19,6 +19,7 @@ const Form = () => {
 
     return (
         <div className="paper">
+            <h4>Posts</h4>
             <form action="" noValidate className="form" onSubmit={handleSubmit}>
                 <h6>Creating a Memory</h6>
                 <input 
@@ -27,6 +28,7 @@ const Form = () => {
                     placeholder="Creator..." 
                     value={postData.creator}
                     onChange={(e) => setPostData({ ...postData, creator: e.target.value})}
+                    required
                 />
                 <input 
                     type="text" 
@@ -34,6 +36,7 @@ const Form = () => {
                     placeholder="Title..." 
                     value={postData.title}
                     onChange={(e) => setPostData({ ...postData, title: e.target.value})}
+                    required
                 />
                 <input 
                     type="text" 
@@ -41,6 +44,7 @@ const Form = () => {
                     placeholder="Message..." 
                     value={postData.message}
                     onChange={(e) => setPostData({ ...postData, message: e.target.value})}
+                    required
                 />
                 <input 
                     type="text" 
@@ -48,6 +52,7 @@ const Form = () => {
                     placeholder="Tags..." 
                     value={postData.tags}
                     onChange={(e) => setPostData({ ...postData, tags: e.target.value})}
+                    required
                 />
                 <div className="fileInput">
                     <input type="file" name="selectedFile" />

@@ -14,13 +14,13 @@ const Post = ({ post }) => {
             </div>
             <div className="overlay">
                 <h6>{ post.creator }</h6>
-                <p>{ moment(post.createdAt).fromNow()}</p>
+                <span className="post-date">{ moment(post.createdAt).fromNow()}</span>
             </div>
             <div className="overlay-2">
                 <button onClick={() => {}}>Text</button>
             </div>
             <div className="details">
-                <span>{ post.tags.map((tag) => `#${tag} `) }</span>
+                <span className="post-tags">{ post.tags.map((tag) => `#${tag} `) }</span>
             </div>
             <div className="card-content">
                 <h5>{ post.message }</h5>
