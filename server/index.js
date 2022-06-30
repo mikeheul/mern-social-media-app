@@ -7,7 +7,6 @@ import postRoutes from "./routes/posts.js";
 
 const app = express();
 
-
 //* MIDDLEWARES
 // Controls the maximum request body size
 app.use(bodyParser.json( {limit: '30mb', extended: true}));
@@ -25,8 +24,6 @@ mongoose.connect(CONNECTION_URL, {
     useUnifiedTopology: true })
         .then(() => app.listen(PORT, () => console.log(`Listening on Server ${PORT}`)))
         .catch((error) => console.log(error.message))
-
-
 
 
 

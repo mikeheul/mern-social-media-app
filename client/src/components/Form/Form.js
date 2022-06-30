@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 // import useStyles from './styles';
+import { useDispatch } from 'react-redux';
+import { createPost } from '../../actions/posts'
 
 const Form = () => {
     // const classes = useStyles();
     const [postData, setPostData] = useState({
         creator: '', title: '', message: '', tags: '', selectedFile: ''
     })
+    const dispatch = useDispatch();
     
-    const handleSubmit = () => {}
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(createPost(postData));
+    }
+    
     const clear = () => {}
 
     return (
         <div className="paper">
-            <form action="" noValidate class="form" onSubmit={handleSubmit}>
+            <form action="" noValidate className="form" onSubmit={handleSubmit}>
                 <h6>Creating a Memory</h6>
                 <input 
                     type="text" 
@@ -45,8 +52,8 @@ const Form = () => {
                 <div className="fileInput">
                     <input type="file" name="selectedFile" />
                 </div>
-                <input type="submit" class="btn-submit" value="Send" />
-                <input type="button" onClick={clear} class="btn-submit" value="Clear" />
+                <input type="submit" className="btn-submit" value="Send" />
+                <input type="button" onClick={clear} className="btn-submit" value="Clear" />
             </form>
         </div>
     );
